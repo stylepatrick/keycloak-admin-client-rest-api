@@ -5,6 +5,8 @@ keycloak:
       securityCollections:
         - name: operator
           methods:
+            - PUT
+            - DELETE
             - GET
             - POST
           patterns:
