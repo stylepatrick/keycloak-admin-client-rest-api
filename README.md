@@ -12,17 +12,17 @@ Two Keycloak clients are needed:
 - app-client: for the application itself (Access Type: public). Users needs to have the APP_OPERATOR role to login.
 - api-client: for the backend api to execute the changes on Keycloak. (Access Type should be confidential).
 
-# Clients
+### Clients
 
 ![Alt text](pictures/api-client.png?raw=true)
 
 ![Alt text](pictures/app-client.png?raw=true)
 
-# Roles
+### Roles
 
 ![Alt text](pictures/app-operator-role.png?raw=true)
 
-# Users
+### Users
 
 ![Alt text](pictures/api-user.png?raw=true)
 
