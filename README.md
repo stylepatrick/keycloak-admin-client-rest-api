@@ -1,28 +1,34 @@
-### Keycloak Admin Client
-The goal of this backend is to provide a API where you can login with the Keycloak Account (OAuth2/OIDC) to manager users which are present in the Keycloak-Realm without having the manage-user role.
-The user which login doesnt need the manage-user privilege because the backend use a own user to make the changes on Keycloak (this special user has the mange-user privilege).
+## Keycloak Admin Client
+The goal of this project is to provide an API to manager users which are present in the Keycloak-Realm without having the "manage-users" role.
+The project should help to manage users externally without the Keycloak UI. Not all users are able to manage users only users which have special permissions (APP_OPERATOR).
+
+The user which login doesnt need the "manage-users" privilege because the backend use a own user (api-user) to make the changes on Keycloak triggered from the API calls from the "normal" users which have the APP_OPERATOR role.
+The special user "api-user" has the "mange-users" privilege.
 
 ![Alt text](pictures/keycloak-admin-client-concept.png?raw=true)
 
 ### Setup:
-Two clients are needed in Keycloak.
-One for the application itself (user logins; Access Type: public) and an other client for the access to manage the users (Access Type should be confidential to provide more secure).
-The APP_OPERATOR role is needed for the login to the application. It needs to get assigned to the user via the Role-Mapping Tab.
+Two Keycloak clients are needed:
+- One for the application itself (Access Type: public); Users needs to have the APP_OPERATOR role to login.
+- And the other client for the backend to execute the changes on Keycloak. (Access Type should be confidential to provide more secure).
 
-#CLIENTS
+# Clients
+
 ![Alt text](pictures/api-client.png?raw=true)
 
 ![Alt text](pictures/app-client.png?raw=true)
 
-#ROLES
+# Roles
+
 ![Alt text](pictures/app-operator-role.png?raw=true)
 
-#USERS
+# Users
+
 ![Alt text](pictures/api-user.png?raw=true)
 
 ![Alt text](pictures/app-user.png?raw=true)
 
-### REST Keycloak API:
+### REST Keycloak API Endpoints:
 
 GET: keycloak/admin/users (Optional with /?search param)
 GET: keycloak/admin/users/{userId}
@@ -36,7 +42,7 @@ GET: keycloak/admin/roles
 PUT: keycloak/admin/users/{userId}/roles/{roleName}
 DELETE:keycloak/admin/users/{userId}/roles/{roleName}
 
-### How to use it with Postman:
+### How to use it in Postman:
 Get the Access-Token from: http://localhost:8180/auth/realms/REALM/protocol/openid-connect/token
 
 ![Alt text](pictures/access-token-from-postman.png?raw=true)
