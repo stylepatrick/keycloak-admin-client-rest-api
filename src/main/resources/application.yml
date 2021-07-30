@@ -1,0 +1,19 @@
+app:
+  version: app.version
+  environment: dev
+
+keycloakAdminApi:
+  realm: REALM
+  resource: api-client
+  auth-server-url: http://localhost:8080/auth
+  username: api-user
+  password: api-user
+  secret: secret
+
+keycloak:
+  realm: REALM
+  resource: app-client
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  public-client: true
+  confidential-port: 0

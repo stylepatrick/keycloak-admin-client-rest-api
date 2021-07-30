@@ -1,0 +1,11 @@
+keycloak:
+  securityConstraints:
+    - authRoles:
+        - APP_OPERATOR
+      securityCollections:
+        - name: operator
+          methods:
+            - GET
+            - POST
+          patterns:
+            - /api/*
