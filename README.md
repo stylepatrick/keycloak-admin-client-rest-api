@@ -9,8 +9,8 @@ The special user "api-user" has the "mange-users" privilege.
 
 ### Setup:
 Two Keycloak clients are needed:
-- One for the application itself (Access Type: public); Users needs to have the APP_OPERATOR role to login.
-- And the other client for the backend to execute the changes on Keycloak. (Access Type should be confidential to provide more secure).
+- app-clinet: for the application itself (Access Type: public). Users needs to have the APP_OPERATOR role to login.
+- api-client: for the backend api to execute the changes on Keycloak. (Access Type should be confidential to provide more secure).
 
 # Clients
 
@@ -30,20 +30,22 @@ Two Keycloak clients are needed:
 
 ### REST Keycloak API Endpoints:
 
-GET: keycloak/admin/users (Optional with /?search param)
-GET: keycloak/admin/users/{userId}
-GET: keycloak/admin/users/{userId}/groups
-GET: keycloak/admin/groups
-PUT: keycloak/admin/users/{userId}/groups/{groupId}
-DELETE: keycloak/admin/users/{userId}/groups/{groupId}
-PUT: keycloak/admin/users/{userId}/attributes/site/{siteId}/application/{appId}
-DELETE: keycloak/admin/users/{userId}/attributes/site/{siteId}/application/{appId}
-GET: keycloak/admin/roles
-PUT: keycloak/admin/users/{userId}/roles/{roleName}
-DELETE:keycloak/admin/users/{userId}/roles/{roleName}
+- GET: keycloak/admin/users (Optional with /?search param)
+- GET: keycloak/admin/users/{userId}
+- GET: keycloak/admin/users/{userId}/groups
+- GET: keycloak/admin/groups
+- PUT: keycloak/admin/users/{userId}/groups/{groupId}
+- DELETE: keycloak/admin/users/{userId}/groups/{groupId}
+- PUT: keycloak/admin/users/{userId}/attributes/site/{siteId}/application/{appId}
+- DELETE: keycloak/admin/users/{userId}/attributes/site/{siteId}/application/{appId}
+- GET: keycloak/admin/roles
+- PUT: keycloak/admin/users/{userId}/roles/{roleName}
+- DELETE:keycloak/admin/users/{userId}/roles/{roleName}
 
 ### How to use it in Postman:
-Get the Access-Token from: http://localhost:8180/auth/realms/REALM/protocol/openid-connect/token
+
+Get the Access-Token from:
+http://localhost:8180/auth/realms/REALM/protocol/openid-connect/token
 
 ![Alt text](pictures/access-token-from-postman.png?raw=true)
 
