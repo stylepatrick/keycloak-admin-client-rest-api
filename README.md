@@ -2,7 +2,7 @@
 The goal of this backend is to provide a API where you can login with the Keycloak Account (OAuth2/OIDC) to manager users which are present in the Keycloak-Realm without having the manage-user role.
 The user which login doesnt need the manage-user privilege because the backend use a own user to make the changes on Keycloak (this special user has the mange-user privilege).
 
-![Alt text](pictures/keycloak-admin-client.png?raw=true)
+![Alt text](pictures/keycloak-admin-client-concept.png?raw=true)
 
 ### Setup:
 Two clients are needed in Keycloak.
