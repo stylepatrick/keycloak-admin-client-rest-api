@@ -10,7 +10,7 @@ The special user "api-user" has the "mange-users" privilege.
 ### Setup:
 Two Keycloak clients are needed:
 - app-clinet: for the application itself (Access Type: public). Users needs to have the APP_OPERATOR role to login.
-- api-client: for the backend api to execute the changes on Keycloak. (Access Type should be confidential to provide more secure).
+- api-client: for the backend api to execute the changes on Keycloak. (Access Type should be confidential).
 
 # Clients
 
